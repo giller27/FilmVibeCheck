@@ -1,0 +1,59 @@
+<div class="finder-header">
+    <h1>Вайб Пошук</h1>
+    <p class="subtitle">Знайди фільм за своїми параметрами</p>
+</div>
+
+<div class="finder-container">
+    <div class="filters-panel">
+        <div class="filter-group">
+            <label>Рівень напруги</label>
+            <div class="slider-container">
+                <span class="slider-label">Спокійно</span>
+                <input type="range" id="tensionSlider" min="1" max="10" value="5">
+                <span class="slider-label">Інтенсивно</span>
+            </div>
+            <div class="slider-value" id="tensionValue">5</div>
+        </div>
+
+        <div class="filter-group">
+            <label>Темп фільму</label>
+            <div class="slider-container">
+                <span class="slider-label">Повільно</span>
+                <input type="range" id="paceSlider" min="1" max="10" value="5">
+                <span class="slider-label">Швидко</span>
+            </div>
+            <div class="slider-value" id="paceValue">5</div>
+        </div>
+
+        <div class="filter-group">
+            <label>Складність сюжету</label>
+            <div class="slider-container">
+                <span class="slider-label">Проста</span>
+                <input type="range" id="complexitySlider" min="1" max="10" value="5">
+                <span class="slider-label">Складна</span>
+            </div>
+            <div class="slider-value" id="complexityValue">5</div>
+        </div>
+
+        <div class="filter-group">
+            <label>Вибери настрій</label>
+            <div class="mood-buttons">
+                <button class="mood-btn" data-mood="drama">Драма</button>
+                <button class="mood-btn" data-mood="action">Екшн</button>
+                <button class="mood-btn" data-mood="comedy">Комедія</button>
+                <button class="mood-btn" data-mood="mystery">Містика</button>
+                <button class="mood-btn" data-mood="romance">Кохання</button>
+                <button class="mood-btn" data-mood="fantasy">Фентезі</button>
+                <button class="mood-btn" data-mood="horror">Жах</button>
+                <button class="mood-btn" data-mood="scifi">Sci-Fi</button>
+            </div>
+        </div>
+
+        <button class="btn-primary" id="applyFilters">Пошукати</button>
+        <button class="btn-secondary" id="resetFilters">Скинути фільтри</button>
+    </div>
+
+    <div class="finder-results">
+        <div class="movies-grid" id="finderResults"></div>
+    </div>
+</div>

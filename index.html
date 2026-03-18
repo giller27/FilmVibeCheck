@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeCheck - Чи варто дивитись?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"></span>
+                <span class="logo-text">VibeCheck</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link" data-page="feed">Головна</a></li>
+                <li><a href="#" class="nav-link" data-page="finder">Вайб Пошук</a></li>
+                <li><a href="#" class="nav-link" data-page="vault">Бібліотека</a></li>
+                <li><a href="#" class="nav-link" data-page="compare">Порівняння</a></li>
+                <li><a href="#" class="nav-link" data-page="charts">Топ-листи</a></li>
+                <li><a href="#" class="nav-link" data-page="profile">Профіль</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-container" id="main-container">
+        <!-- Page content loads here dynamically -->
+    </main>
+
+    <!-- MOVIE CARD MODAL -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-poster">
+                    <img id="modalPoster" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalGenre" class="modal-genre"></p>
+                    <p id="modalYear" class="modal-year"></p>
+                    <p id="modalDescription"></p>
+
+                    <div class="rating-section">
+                        <div class="rating-item">
+                            <label>Напруга: <span id="modalTensionValue">0</span>/10</label>
+                            <div class="stars-input" data-param="tension">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                                <span class="star" data-value="6">★</span>
+                                <span class="star" data-value="7">★</span>
+                                <span class="star" data-value="8">★</span>
+                                <span class="star" data-value="9">★</span>
+                                <span class="star" data-value="10">★</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-item">
+                            <label>Темп: <span id="modalPaceValue">0</span>/10</label>
+                            <div class="stars-input" data-param="pace">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                                <span class="star" data-value="6">★</span>
+                                <span class="star" data-value="7">★</span>
+                                <span class="star" data-value="8">★</span>
+                                <span class="star" data-value="9">★</span>
+                                <span class="star" data-value="10">★</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-item">
+                            <label>Складність сюжету: <span id="modalComplexityValue">0</span>/10</label>
+                            <div class="stars-input" data-param="complexity">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                                <span class="star" data-value="6">★</span>
+                                <span class="star" data-value="7">★</span>
+                                <span class="star" data-value="8">★</span>
+                                <span class="star" data-value="9">★</span>
+                                <span class="star" data-value="10">★</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-item">
+                            <label>Якість фіналу: <span id="modalEndingValue">0</span>/10</label>
+                            <div class="stars-input" data-param="ending">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                                <span class="star" data-value="6">★</span>
+                                <span class="star" data-value="7">★</span>
+                                <span class="star" data-value="8">★</span>
+                                <span class="star" data-value="9">★</span>
+                                <span class="star" data-value="10">★</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-item">
+                            <label>Загальна оцінка</label>
+                            <div class="overall-rating" id="overallRating">0.0</div>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-primary" id="markWatchedBtn">Як переглянуто</button>
+                        <button class="btn-secondary" id="addWishlistBtn">В список</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/shared.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadState();
+            initNavigation();
+            setupModalListeners();
+            navigateTo("feed");
+        });
+    </script>
+</body>
+</html>
